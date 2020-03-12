@@ -7,6 +7,7 @@ const StyledIconButton = styled(Box)`
   display: flex;
   justify-content: center;
 	align-items: center;
+	box-shadow: none;
 	transition: all 150ms ease-in-out;
 	
 	&:hover {

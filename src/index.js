@@ -13,7 +13,8 @@ const theme = {
 		gray: '#5E6368',
 		light: '#eaeaea',
 		white: '#fff',
-		green: '#2ECC71'
+		green: '#2Ecc71',
+		red: '#e74c3C'
 	},
 	fonts: {
 		primary: 'Inter'

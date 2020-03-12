@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const BaseButton = styled.a`
+const Box = styled.a`
   box-sizing: border-box;
   padding: 16px 12px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.03);
@@ -9,4 +9,4 @@ const BaseButton = styled.a`
   cursor: pointer;
 `;
 
-export default BaseButton;
+export default Box;

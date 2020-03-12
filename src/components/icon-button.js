@@ -1,7 +1,7 @@
 import styled, { useTheme } from 'styled-components';
-import BaseButton from './base-button';
+import Box from './box';
 
-const StyledIconButton = styled(BaseButton)`
+const StyledIconButton = styled(Box)`
 	border: ${({ theme }) => `2px solid ${theme.colors.light}`};
 	background: none;
   display: flex;

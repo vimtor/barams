@@ -1,5 +1,4 @@
-import { useContext } from 'preact/hooks';
-import styled, { ThemeContext } from 'styled-components';
+import styled, { useTheme } from 'styled-components';
 import GithubIcon from 'preact-icons/io/social-github';
 import SettingsIcon from 'preact-icons/md/settings';
 
@@ -25,7 +24,7 @@ const NavLinks = styled.div`
 `;
 
 const NavLink = ({ icon, to }) => {
-	const theme = useContext(ThemeContext);
+	const theme = useTheme();
 	const Icon = icon;
 
 	return (

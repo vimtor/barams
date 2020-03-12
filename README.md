@@ -1,2 +1,2 @@
 # barams
-Chrome Extension for mananing URL param templates.
+Chrome Extension for managing URL param templates.

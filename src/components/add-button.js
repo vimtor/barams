@@ -6,7 +6,7 @@ const AddButton = () =>  {
 	const theme = useTheme();
 
 	return (
-		<IconButton icon={AddIcon} color={theme.colors.green} />
+		<IconButton icon={AddIcon} color={theme.colors.green} to="/create" />
 	);
 };
 

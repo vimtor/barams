@@ -1,10 +1,23 @@
+import Router from 'preact-router';
 import styled, { ThemeProvider } from 'styled-components';
 import NavBar from './components/nav-bar';
-import Content from './components/content';
-import Button from './components/button';
-import AddButton from './components/add-button';
+import Home from './pages/home';
+import Create from './pages/create';
 
 import './style.css';
+
+const theme = {
+	colors: {
+		black: '#515151',
+		gray: '#5E6368',
+		light: '#eaeaea',
+		white: '#fff',
+		green: '#2ECC71'
+	},
+	fonts: {
+		primary: 'Inter'
+	}
+};
 
 const StyledApp = styled.main`
   width: 300px;
@@ -12,26 +25,13 @@ const StyledApp = styled.main`
 `;
 
 const App = () => (
-	<ThemeProvider theme={{
-		colors: {
-			black: '#515151',
-			gray: '#5E6368',
-			light: '#eaeaea',
-			white: '#fff',
-			green: '#2ECC71'
-		},
-		fonts: {
-			primary: 'Inter'
-		}
-	}}
-	>
+	<ThemeProvider theme={theme}>
 		<StyledApp>
 			<NavBar />
-			<Content>
-				<Button>GitHub Issue</Button>
-				<Button>GitHub Issue</Button>
-				<AddButton />
-			</Content>
+			<Router>
+				<Home path="/" />
+				<Create path="/create" />
+			</Router>
 		</StyledApp>
 	</ThemeProvider>
 );

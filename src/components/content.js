@@ -5,7 +5,7 @@ const Content = styled.section`
   display: grid;
   gap: 12px;
   padding: 24px;
-  background-color: ${({ theme }) => theme.colors.light};
+  background-color: #f5f5f5;
 `;
 
 export default Content;

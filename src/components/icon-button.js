@@ -7,10 +7,11 @@ const StyledIconButton = styled(BaseButton)`
   display: flex;
   justify-content: center;
 	align-items: center;
-	transition: background 150ms ease-in-out;
+	transition: all 150ms ease-in-out;
 	
 	&:hover {
 		background-color: ${props => props.color};
+		border-color: ${props => props.color};
 	}
 
 	&:hover svg {
@@ -24,7 +25,7 @@ const IconButton = ({ icon, color }) => {
 
 	return (
 		<StyledIconButton color={color}>
-			<Icon size={16} color={theme.colors.light} />
+			<Icon size={24} color={theme.colors.light} />
 		</StyledIconButton>
 	);
 };

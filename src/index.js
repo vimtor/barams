@@ -4,6 +4,8 @@ import Content from './components/content';
 import Button from './components/button';
 import AddButton from './components/add-button';
 
+import './style.css';
+
 const StyledApp = styled.main`
   width: 300px;
   height: auto;
@@ -17,6 +19,9 @@ const App = () => (
 			light: '#eaeaea',
 			white: '#fff',
 			green: '#2ECC71'
+		},
+		fonts: {
+			primary: 'Inter'
 		}
 	}}
 	>

@@ -12,7 +12,9 @@ const NavWrapper = styled.nav`
 `;
 
 const NavTitle = styled.h1`
-  font-size: 18px;
+	font-size: 18px;
+	font-family: ${({ theme }) => theme.fonts.primary};
+	line-height: 0;
   margin: 0px;
   color: ${({ theme }) => theme.colors.black}
 `;

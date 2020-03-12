@@ -1,3 +1,4 @@
+import { useCallback } from 'preact/hooks';
 import styled, { useTheme } from 'styled-components';
 import Box from './box';
 
@@ -8,24 +9,36 @@ const StyledIconButton = styled(Box)`
   justify-content: center;
 	align-items: center;
 	box-shadow: none;
+	cursor: ${props => props.disabled ? 'default' : 'pointer'};
 	transition: all 150ms ease-in-out;
 	
 	&:hover {
-		background-color: ${props => props.color};
-		border-color: ${props => props.color};
+		background-color: ${props => !props.disabled && props.color};
+		border-color: ${props => !props.disabled && props.color};
 	}
 
 	&:hover svg {
-		fill: ${({ theme }) => theme.colors.white};
+		fill: ${props => !props.disabled && props.theme.colors.white};
 	}
 `;
 
-const IconButton = ({ icon, color, to, onClick }) => {
+const IconButton = ({ icon, disabled, color, to, onClick }) => {
 	const theme = useTheme();
 	const Icon = icon;
 
+	const handleSubmit = useCallback(value => {
+		if (!disabled && onClick) {
+			onClick(value);
+		}
+	}, [disabled, onClick]);
+
 	return (
-		<StyledIconButton color={theme.colors[color] || color} onClick={onClick} href={to}>
+		<StyledIconButton
+			disabled={disabled}
+			color={theme.colors[color] || color}
+			onClick={handleSubmit}
+			href={to}
+		>
 			<Icon size={24} color={theme.colors.light} />
 		</StyledIconButton>
 	);

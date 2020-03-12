@@ -22,7 +22,7 @@ const Create = () => {
 		route('/', true);
 	}, [name]);
 
-	const handleCancel = useCallback(() => route('/', true));
+	const handleCancel = useCallback(() => route('/', true), []);
 
 	return (
 		<Content>
@@ -31,7 +31,7 @@ const Create = () => {
 				onChange={setName}
 			/>
 			<Form>
-				<ConfirmButton onClick={handleSubmit} />
+				<ConfirmButton disabled={!name} onClick={handleSubmit} />
 				<CancelButton onClick={handleCancel} />
 			</Form>
 		</Content>

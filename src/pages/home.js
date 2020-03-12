@@ -1,13 +1,19 @@
 import Content from '../components/content';
 import Button from '../components/button';
 import AddButton from '../components/add-button';
+import { useGroups } from '../contexts/groups-context';
 
-const Home = () => (
-	<Content>
-		<Button>GitHub Issue</Button>
-		<Button>GitHub Issue</Button>
-		<AddButton />
-	</Content>
-);
+const Home = () => {
+	const { groups } = useGroups();
+
+	return (
+		<Content>
+			{groups.map(group => (
+				<Button key={group.id}>{group.name}</Button>
+			))}
+			<AddButton />
+		</Content>
+	);
+};
 
 export default Home;

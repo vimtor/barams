@@ -1,12 +1,16 @@
 import { useTheme } from 'styled-components';
-import IconButton from './icon-button';
 import CheckIcon from 'preact-icons/md/check';
+import IconButton from './icon-button';
 
-const ConfirmButton = () =>  {
+const ConfirmButton = ({ onClick }) =>  {
 	const theme = useTheme();
 
 	return (
-		<IconButton icon={CheckIcon} color={theme.colors.green} to="/" />
+		<IconButton
+			icon={CheckIcon}
+			color={theme.colors.green}
+			onClick={onClick}
+		/>
 	);
 };
 

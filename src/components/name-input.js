@@ -27,11 +27,15 @@ const Input = styled.input`
   }
 `;
 
-const NameButton = ({ placeholder }) => {
+const NameInput = ({ placeholder, onChange }) => {
 	const [value, setValue] = useState('');
 	const [focused, setFocused] = useState(false);
 
-	const handleChange = useCallback(e => setValue(e.target.value), []);
+	const handleChange = useCallback(e =>  {
+		setValue(e.target.value);
+		onChange(e.target.value);
+	}, []);
+
 	const handleFocus = useCallback(() => setFocused(true), []);
 	const handleBlur = useCallback(() => setFocused(value), [value]);
 
@@ -50,4 +54,4 @@ const NameButton = ({ placeholder }) => {
 	);
 };
 
-export default NameButton;
+export default NameInput;

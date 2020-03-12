@@ -19,12 +19,12 @@ const StyledIconButton = styled(Box)`
 	}
 `;
 
-const IconButton = ({ icon, color, to }) => {
+const IconButton = ({ icon, color, to, onClick }) => {
 	const theme = useTheme();
 	const Icon = icon;
 
 	return (
-		<StyledIconButton color={color} href={to}>
+		<StyledIconButton color={color} onClick={onClick} href={to}>
 			<Icon size={24} color={theme.colors.light} />
 		</StyledIconButton>
 	);

@@ -1,5 +1,6 @@
 import Router from 'preact-router';
 import styled, { ThemeProvider } from 'styled-components';
+import GroupProvider from './contexts/groups-context';
 import NavBar from './components/nav-bar';
 import Home from './pages/home';
 import Create from './pages/create';
@@ -26,13 +27,15 @@ const StyledApp = styled.main`
 
 const App = () => (
 	<ThemeProvider theme={theme}>
-		<StyledApp>
-			<NavBar />
-			<Router>
-				<Home path="/" />
-				<Create path="/create" />
-			</Router>
-		</StyledApp>
+		<GroupProvider>
+			<StyledApp>
+				<NavBar />
+				<Router>
+					<Home path="/" />
+					<Create path="/create" />
+				</Router>
+			</StyledApp>
+		</GroupProvider>
 	</ThemeProvider>
 );
 

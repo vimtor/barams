@@ -1,6 +1,17 @@
-import 'preact';
-import Group from './components/Group';
+import styled, { ThemeProvider } from 'styled-components';
+import NavBar from './components/NavBar';
 
-const App = () => <div>Hello<Group /></div>;
+const AppWrapper = styled.main`
+  width: 300px;
+  height: auto;
+`;
+
+const App = () => (
+	<ThemeProvider theme={{ colors: { black: '#515151', gray: '#5E6368' } }}>
+		<AppWrapper>
+			<NavBar />
+		</AppWrapper>
+	</ThemeProvider>
+);
 
 export default App;

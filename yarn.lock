@@ -6573,6 +6573,18 @@ preact-cli@^3.0.0-rc.6:
     which "^2.0.2"
     workbox-webpack-plugin "^4.3.1"
 
+preact-icon-base@2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/preact-icon-base/-/preact-icon-base-2.0.6.tgz#d3d6c8fa1c87e8c3408265617dfe4b77dfbdc24b"
+  integrity sha1-09bI+hyH6MNAgmVhff5Ld9+9wks=
+
+preact-icons@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/preact-icons/-/preact-icons-2.2.5.tgz#826d5733d5916cc19189b4552b93377fd1f10b08"
+  integrity sha1-gm1XM9WRbMGRibRVK5M3f9HxCwg=
+  dependencies:
+    preact-icon-base "2.0.6"
+
 preact-render-to-string@^5.1.2:
   version "5.1.4"
   resolved "https://registry.yarnpkg.com/preact-render-to-string/-/preact-render-to-string-5.1.4.tgz#f26171f58f0e93b36236e4b0bee62ce561120b7c"

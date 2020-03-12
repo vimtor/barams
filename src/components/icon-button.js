@@ -25,11 +25,13 @@ const IconButton = ({ icon, color, to, onClick }) => {
 	const Icon = icon;
 
 	return (
-		<StyledIconButton color={color} onClick={onClick} href={to}>
+		<StyledIconButton color={theme.colors[color] || color} onClick={onClick} href={to}>
 			<Icon size={24} color={theme.colors.light} />
 		</StyledIconButton>
 	);
 };
+
+export const createIconButton = (icon, color) => props => <IconButton icon={icon} color={color} {...props} />;
 
 export default IconButton;
 

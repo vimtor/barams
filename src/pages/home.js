@@ -11,7 +11,7 @@ const Home = () => {
 			{groups.map(group => (
 				<Button key={group.id}>{group.name}</Button>
 			))}
-			<AddButton />
+			<AddButton to="/create" />
 		</Content>
 	);
 };

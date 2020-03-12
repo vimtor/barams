@@ -1,18 +1,6 @@
-import { useTheme } from 'styled-components';
+import { createIconButton } from './icon-button';
 import CancelIcon from 'preact-icons/md/block';
-import IconButton from './icon-button';
 
-const CancelButton = ({ onClick }) =>  {
-	const theme = useTheme();
-
-	return (
-		<IconButton
-			icon={CancelIcon}
-			color={theme.colors.red}
-			onClick={onClick}
-		/>
-	);
-};
+const CancelButton = createIconButton(CancelIcon, 'red');
 
 export default CancelButton;
-

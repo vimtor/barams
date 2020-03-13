@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const Box = styled.a`
   box-sizing: border-box;
+  display: block;
   width: 100%;
   padding: 16px 12px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.03);

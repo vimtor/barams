@@ -99,11 +99,13 @@ const ParamsInput = ({ placeholder, onChange }) => {
 							placeholder="Name"
 							onInput={handleChange(idx)}
 							name="name"
+							autoComplete="off"
 						/>
 						<Input
 							placeholder="Value"
 							onInput={handleChange(idx)}
 							name="value"
+							autoComplete="off"
 						/>
 					</ParamsRow>
 				))}

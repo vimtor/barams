@@ -47,7 +47,7 @@ const ParamsRow = styled.div`
 
 const ParamsGrid = styled.div`
   display: grid;
-  gap: 4px;
+  gap: 8px;
 `;
 
 const EMPTY_PARAM = { name: '', value: '' };

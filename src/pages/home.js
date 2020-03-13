@@ -21,11 +21,13 @@ const Home = () => {
 
 	return (
 		<Content>
-			<ButtonGrid>
-				{groups.map(group => (
-					<Button key={group.id}>{group.name}</Button>
-				))}
-			</ButtonGrid>
+			{groups.length !== 0 &&
+				<ButtonGrid>
+					{groups.map(group => (
+						<Button key={group.id}>{group.name}</Button>
+					))}
+				</ButtonGrid>
+			}
 			<AddButton to="/create" />
 		</Content>
 	);

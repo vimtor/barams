@@ -7,7 +7,7 @@ import { useGroups } from '../contexts/groups-context';
 
 const ButtonGrid = styled.div`
 	max-height: 200px;
-	display: grid;
+	display: ${props => props.display ? 'grid' : 'none'};
 	gap: 8px;
 	overflow-y: scroll;
 
@@ -21,13 +21,11 @@ const Home = () => {
 
 	return (
 		<Content>
-			{groups.length !== 0 &&
-				<ButtonGrid>
-					{groups.map(group => (
-						<Button key={group.id}>{group.name}</Button>
-					))}
-				</ButtonGrid>
-			}
+			<ButtonGrid display={groups.length !== 0}>
+				{groups.map(group => (
+					<Button key={group.id}>{group.name}</Button>
+				))}
+			</ButtonGrid>
 			<AddButton to="/create" />
 		</Content>
 	);

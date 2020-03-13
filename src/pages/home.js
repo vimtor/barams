@@ -1,3 +1,4 @@
+import { h } from 'preact';
 import Content from '../components/content';
 import Button from '../components/button';
 import AddButton from '../components/add-button';

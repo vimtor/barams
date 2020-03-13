@@ -1,6 +1,7 @@
+import { h } from 'preact';
 import { createIconButton } from './icon-button';
-import CancelIcon from 'preact-icons/md/block';
+import { MdBlock } from 'react-icons/md';
 
-const CancelButton = createIconButton(CancelIcon, 'red');
+const CancelButton = createIconButton(MdBlock, 'red');
 
 export default CancelButton;

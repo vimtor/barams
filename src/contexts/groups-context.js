@@ -1,5 +1,5 @@
+import { h, createContext } from 'preact';
 import { useContext, useReducer } from 'preact/hooks';
-import { createContext } from 'preact';
 
 const GroupsContext = createContext();
 

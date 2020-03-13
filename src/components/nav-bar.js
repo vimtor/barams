@@ -1,6 +1,7 @@
+import { h } from 'preact';
 import styled, { useTheme } from 'styled-components';
-import GithubIcon from 'preact-icons/io/social-github';
-import SettingsIcon from 'preact-icons/md/settings';
+import { IoLogoGithub } from 'react-icons/io';
+import { MdSettings } from 'react-icons/md';
 
 const NavWrapper = styled.nav`
   box-sizing: border-box;
@@ -42,8 +43,8 @@ const NavBar = () => (
       barams
 		</NavTitle>
 		<NavLinks>
-			<NavLink icon={GithubIcon} to="https://github.com/papeloto/barams" />
-			<NavLink icon={SettingsIcon} />
+			<NavLink icon={IoLogoGithub} to="https://github.com/papeloto/barams" />
+			<NavLink icon={MdSettings} />
 		</NavLinks>
 	</NavWrapper>
 );

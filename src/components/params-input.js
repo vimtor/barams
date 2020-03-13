@@ -1,3 +1,4 @@
+import { h } from 'preact';
 import { useState } from 'preact/hooks';
 import styled, { keyframes } from 'styled-components';
 import Box from './box';

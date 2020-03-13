@@ -4,3 +4,4 @@ node_modules
 .vscode/
 size-plugin.json
 dist
+.cache

@@ -5,6 +5,7 @@ import GroupProvider from './contexts/groups-context';
 import NavBar from './components/nav-bar';
 import Home from './pages/home';
 import Create from './pages/create';
+import { createHashHistory } from 'history';
 
 import './style.css';
 
@@ -32,7 +33,7 @@ const App = () => (
 		<GroupProvider>
 			<StyledApp>
 				<NavBar />
-				<Router>
+				<Router history={createHashHistory()}>
 					<Home path="/" />
 					<Create path="/create" />
 				</Router>

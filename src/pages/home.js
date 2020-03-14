@@ -16,14 +16,37 @@ const ButtonGrid = styled.div`
 	}
 `;
 
+const updateParameters = (url, params) => {
+	const args = params.map(({ name, value }) => `${name}=${value}`).join('&');
+
+	if (url.includes('?')) {
+		if (url.endsWith('?')) {
+			return url + args;
+		}
+
+		return url + '&' + args;
+	}
+
+	return url + '?' + args;
+};
+
 const Home = () => {
 	const { groups } = useGroups();
+
+	const handleClick = params => () => {
+		const location = window.location;
+
+		location.href = updateParameters(location.href, params);
+		location.reload();
+	};
 
 	return (
 		<Content>
 			<ButtonGrid display={groups.length !== 0}>
 				{groups.map(group => (
-					<Button key={group.id}>{group.name}</Button>
+					<Button key={group.id} onClick={handleClick(group.params)}>
+						{group.name}
+					</Button>
 				))}
 			</ButtonGrid>
 			<AddButton to="/create" />

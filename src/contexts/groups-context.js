@@ -8,7 +8,7 @@ function groupsReducer(state, action) {
 		case 'ADD': {
 			return [
 				...state,
-				action.payload
+				action.payload,
 			];
 		}
 		default: {

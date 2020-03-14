@@ -16,11 +16,11 @@ const theme = {
 		light: '#eaeaea',
 		white: '#fff',
 		green: '#2Ecc71',
-		red: '#e74c3C'
+		red: '#e74c3C',
 	},
 	fonts: {
-		primary: 'Inter'
-	}
+		primary: 'Inter',
+	},
 };
 
 const StyledApp = styled.main`

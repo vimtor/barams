@@ -23,7 +23,7 @@ const StyledIconButton = styled(Box)`
 	}
 `;
 
-const IconButton = ({ icon, disabled, color, to, onClick }) => {
+const IconButton = ({ icon, disabled, color, to, onClick, ...props }) => {
 	const theme = useTheme();
 	const Icon = icon;
 
@@ -39,6 +39,7 @@ const IconButton = ({ icon, disabled, color, to, onClick }) => {
 			color={theme.colors[color] || color}
 			onClick={handleSubmit}
 			href={to}
+			{...props}
 		>
 			<Icon size={24} color={theme.colors.light} />
 		</StyledIconButton>

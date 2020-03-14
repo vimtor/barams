@@ -25,10 +25,10 @@ const updateParameters = (url, params) => {
 			return url + args;
 		}
 
-		return url + '&' + args;
+		return `${url  }&${  args}`;
 	}
 
-	return url + '?' + args;
+	return `${url  }?${  args}`;
 };
 
 const Home = () => {
@@ -44,14 +44,14 @@ const Home = () => {
 
 	return (
 		<Content>
-			<ButtonGrid display={groups.length !== 0}>
+			<ButtonGrid display={groups.length !== 0} data-test="group-grid">
 				{groups.map(group => (
 					<Button key={group.id} onClick={handleClick(group.params)}>
 						{group.name}
 					</Button>
 				))}
 			</ButtonGrid>
-			<AddButton to="/create" />
+			<AddButton to="/create" data-test="create-button" />
 		</Content>
 	);
 };

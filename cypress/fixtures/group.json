@@ -1,0 +1,14 @@
+{
+  "name": "GitHub Feature",
+  "parameters": [
+    {
+      "name": "template",
+      "value": "pr.md"
+    },
+    {
+      "name": "expand",
+      "value": "true"
+    }
+  ],
+  "url": "?template=pr.md&expand=true"
+}

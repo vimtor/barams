@@ -50,6 +50,7 @@ const NameInput = ({ placeholder, onChange }) => {
 				onFocus={handleFocus}
 				onBlur={handleBlur}
 				onChange={handleChange}
+				data-test="name-input"
 			/>
 		</InputButton>
 	);

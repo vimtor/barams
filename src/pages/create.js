@@ -23,7 +23,7 @@ const Create = () => {
 	const handleSubmit = useCallback(() => {
 		dispatch({ type: 'ADD', payload: { name, params } });
 		route('/', true);
-	}, [name, params]);
+	}, [name, params, dispatch]);
 
 	const handleCancel = useCallback(() => route('/', true), []);
 
@@ -38,8 +38,15 @@ const Create = () => {
 				onChange={setParams}
 			/>
 			<Form>
-				<ConfirmButton disabled={!name} onClick={handleSubmit} />
-				<CancelButton onClick={handleCancel} />
+				<ConfirmButton
+					disabled={!name}
+					onClick={handleSubmit}
+					data-test="confirm-button"
+				/>
+				<CancelButton
+					onClick={handleCancel}
+					data-test="cancel-button"
+				/>
 			</Form>
 		</Content>
 	);

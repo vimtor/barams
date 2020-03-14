@@ -100,12 +100,14 @@ const ParamsInput = ({ placeholder, onChange }) => {
 							onInput={handleChange(idx)}
 							name="name"
 							autoComplete="off"
+							data-test={`param-name-input-${idx}`}
 						/>
 						<Input
 							placeholder="Value"
 							onInput={handleChange(idx)}
 							name="value"
 							autoComplete="off"
+							data-test={`param-value-input-${idx}`}
 						/>
 					</ParamsRow>
 				))}

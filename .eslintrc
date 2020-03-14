@@ -1,8 +1,11 @@
 {
-  "extends": "eslint-config-synacor",
+  "extends": ["eslint-config-synacor", "preact", "plugin:cypress/recommended"],
   "plugins": ["cypress"],
   "env": {
     "cypress/globals": true
+  },
+  "rules": {
+    "jest/expect-expect": "off"
   },
   "ignorePatterns": ["dist/", "build/", "node_modules/"]
 }

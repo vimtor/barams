@@ -1,11 +1,13 @@
 {
-  "extends": ["eslint-config-synacor", "preact", "plugin:cypress/recommended"],
-  "plugins": ["cypress"],
+  "extends": ["eslint-config-synacor", "plugin:cypress/recommended"],
+  "plugins": ["cypress", "better-styled-components"],
   "env": {
-    "cypress/globals": true
+    "cypress/globals": true,
+    "webextensions": true
   },
   "rules": {
-    "jest/expect-expect": "off"
+    "jest/expect-expect": "off",
+    "better-styled-components/sort-declarations-alphabetically": 2
   },
   "ignorePatterns": ["dist/", "build/", "node_modules/"]
 }

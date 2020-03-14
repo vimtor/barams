@@ -4,13 +4,13 @@ import styled, { useTheme } from 'styled-components';
 import Box from './box';
 
 const StyledIconButton = styled(Box)`
-	border: ${({ theme }) => `2px solid ${theme.colors.light}`};
-	background: none;
-  display: flex;
-  justify-content: center;
 	align-items: center;
-	box-shadow: none;
+	background: none;
+  border: ${({ theme }) => `2px solid ${theme.colors.light}`};
+  box-shadow: none;
 	cursor: ${props => props.disabled ? 'default' : 'pointer'};
+	display: flex;
+	justify-content: center;
 	transition: all 150ms ease-in-out;
 	
 	&:hover {

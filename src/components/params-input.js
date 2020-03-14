@@ -5,19 +5,19 @@ import Box from './box';
 import Label from './label';
 
 const ParamsBox = styled(Box)`
-  font-family: ${({ theme }) => theme.fonts.primary};
   background: ${({ theme }) => theme.colors.white};
   display: flex;
   flex-direction: column;
+  font-family: ${({ theme }) => theme.fonts.primary};
 `;
 
 const Input = styled.input`
-  font-size: 14px;
-  width: 100%;
-  border: 0;
   background: transparent;
+  border: 0;
   color: ${({ theme }) => theme.colors.gray};
+  font-size: 14px;
   text-overflow: ellipsis;
+  width: 100%;
 
   &:focus {
     outline: none;
@@ -40,10 +40,10 @@ const fadeIn = keyframes`
 `;
 
 const ParamsRow = styled.div`
+  animation: ${fadeIn} 150ms ease-in-out forwards;
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 8px;
-	animation: ${fadeIn} 150ms ease-in-out forwards;
+	grid-template-columns: 1fr 1fr;
 `;
 
 const ParamsGrid = styled.div`

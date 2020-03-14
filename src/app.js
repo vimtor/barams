@@ -24,8 +24,8 @@ const theme = {
 };
 
 const StyledApp = styled.main`
-  width: 300px;
   height: auto;
+  width: 300px;
 `;
 
 const App = () => (

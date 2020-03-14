@@ -4,8 +4,8 @@ import Box from './box';
 
 const Button = styled(Box)`
   background-color: ${({ theme }) => theme.colors.white};
-  font-family: ${({ theme }) => theme.fonts.primary};
   color: ${({ theme }) => theme.colors.gray};
+  font-family: ${({ theme }) => theme.fonts.primary};
   transition: all 150ms ease-in-out;
 
   &:hover {

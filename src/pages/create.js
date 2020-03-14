@@ -11,8 +11,8 @@ import ParamsInput from '../components/params-input';
 
 const Form = styled.form`
 	display: grid;
-	grid-template-columns: 1fr 1fr;
 	gap: 8px;
+	grid-template-columns: 1fr 1fr;
 `;
 
 const Create = () => {

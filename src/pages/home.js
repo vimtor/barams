@@ -7,9 +7,9 @@ import { useGroups } from '../contexts/groups-context';
 import useTab from '../hooks/use-tab';
 
 const ButtonGrid = styled.div`
-	max-height: 200px;
 	display: ${props => props.display ? 'grid' : 'none'};
 	gap: 8px;
+	max-height: 200px;
 	overflow-y: scroll;
 
 	&::-webkit-scrollbar {

@@ -4,26 +4,26 @@ import { IoLogoGithub } from 'react-icons/io';
 import { MdSettings } from 'react-icons/md';
 
 const NavWrapper = styled.nav`
+  align-items: center;
+  background-color: white;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 16px 24px;
-  background-color: white;
 `;
 
 const NavTitle = styled.h1`
-	font-size: 18px;
+	color: ${({ theme }) => theme.colors.black};
 	font-family: ${({ theme }) => theme.fonts.primary};
-	line-height: 0;
+	font-size: 18px;
+  line-height: 0;
   margin: 0px;
-  color: ${({ theme }) => theme.colors.black}
 `;
 
 const NavLinks = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 4px;
+  grid-template-columns: 1fr 1fr;
 `;
 
 const NavLink = ({ icon, to }) => {

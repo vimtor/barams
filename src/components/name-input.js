@@ -5,19 +5,19 @@ import Box from './box';
 import Label from './label';
 
 const InputButton = styled(Box)`
-  font-family: ${({ theme }) => theme.fonts.primary};
   background: ${({ theme }) => theme.colors.white};
   display: flex;
   flex-direction: column;
+  font-family: ${({ theme }) => theme.fonts.primary};
 `;
 
 const Input = styled.input`
-  font-size: 20px;
-  width: 100%;
-  border: 0;
   background: transparent;
+  border: 0;
   color: ${({ theme }) => theme.colors.gray};
+  font-size: 20px;
   text-overflow: ellipsis;
+  width: 100%;
 
   &:focus {
     outline: none;

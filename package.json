@@ -7,6 +7,7 @@
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html --no-source-maps --detailed-report --no-cache",
+    "test": "cypress run",
     "cypress": "run-p start cypress:open",
     "cypress:open": "cypress open",
     "lint": "eslint src"

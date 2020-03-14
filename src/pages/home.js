@@ -4,6 +4,7 @@ import Content from '../components/content';
 import Button from '../components/button';
 import AddButton from '../components/add-button';
 import { useGroups } from '../contexts/groups-context';
+import useTab from '../hooks/use-tab';
 
 const ButtonGrid = styled.div`
 	max-height: 200px;
@@ -32,12 +33,13 @@ const updateParameters = (url, params) => {
 
 const Home = () => {
 	const { groups } = useGroups();
+	const tab = useTab();
 
 	const handleClick = params => () => {
-		const location = window.location;
+		const url = tab.get();
 
-		location.href = updateParameters(location.href, params);
-		location.reload();
+		tab.set(updateParameters(url, params));
+		tab.reload();
 	};
 
 	return (

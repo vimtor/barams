@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
   "name": "barams",
-  "description": "Chrome Extension for managing URL param templates",
+  "description": "Create URL parameter templates",
   "version": "0.1.0",
   "browser_action": {
     "default_popup": "dist/index.html"
   },
-  "permissions": ["storage", "activeTab"]
+  "permissions": ["storage", "tabs"]
 }

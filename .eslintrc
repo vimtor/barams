@@ -1,0 +1,8 @@
+{
+  "extends": "eslint-config-synacor",
+  "plugins": ["cypress"],
+  "env": {
+    "cypress/globals": true
+  },
+  "ignorePatterns": ["dist/", "build/", "node_modules/"]
+}

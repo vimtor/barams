@@ -1,25 +1,25 @@
 {
   "private": true,
   "name": "barams",
+  "description": "Chrome extension for managing your url parameters",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "start": "parcel src/index.html --open",
+    "start": "parcel src/index.html",
     "build": "parcel build src/index.html --no-source-maps --detailed-report --no-cache",
+    "cypress": "run-p start cypress:open",
+    "cypress:open": "cypress open",
     "lint": "eslint src"
   },
-  "eslintConfig": {
-    "extends": "eslint-config-synacor"
-  },
-  "eslintIgnore": [
-    "build/*"
-  ],
   "devDependencies": {
+    "cypress": "^4.1.0",
     "eslint": "^6.8.0",
     "eslint-config-synacor": "^3.0.5",
+    "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.12.4"
   },
   "dependencies": {
+    "eslint-plugin-cypress": "^2.10.3",
     "history": "^4.10.1",
     "preact": "^10.3.4",
     "preact-compat": "^3.19.0",

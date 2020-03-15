@@ -1,4 +1,5 @@
 import { h, createContext } from 'preact';
+import { v1 as uuid } from 'uuid';
 import { useContext, useEffect, useReducer } from 'preact/hooks';
 
 const GroupsContext = createContext();
@@ -8,7 +9,10 @@ function groupsReducer(state, action) {
 		case 'ADD': {
 			const groups = [
 				...state,
-				action.payload,
+				{
+					...action.payload,
+					id: uuid(),
+				},
 			];
 
 			if (process.env.NODE_ENV === 'production') {
@@ -22,6 +26,18 @@ function groupsReducer(state, action) {
 		}
 		case 'SET': {
 			return action.payload;
+		}
+		case 'DELETE': {
+			const groups = state.filter(({ id }) => id !== action.payload);
+
+			if (process.env.NODE_ENV === 'production') {
+				chrome.storage.sync.set({ groups });
+			}
+			else {
+				localStorage.setItem('groups', JSON.stringify(groups));
+			}
+
+			return groups;
 		}
 		default: {
 			throw new Error(`Unhandled action type: ${action.type}`);

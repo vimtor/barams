@@ -65,4 +65,11 @@ describe('create group', () => {
 	it('does not erase created groups when reloading', () => cy.fixture('group').then(({ name }) => {
 		cy.contains(name);
 	}));
+
+	it('removes the group correctly', () => cy.fixture('group').then(({ name }) => {
+		cy.label('delete-group-button').click();
+		cy.contains(name).should('not.exist');
+		cy.visit('/');
+		cy.contains(name).should('not.exist');
+	}));
 });

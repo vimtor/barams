@@ -15,7 +15,7 @@ const Input = styled.input`
   background: transparent;
   border: 0;
   color: ${({ theme }) => theme.colors.gray};
-  font-size: 14px;
+  font-size: 20px;
   text-overflow: ellipsis;
   width: 100%;
 
@@ -35,7 +35,7 @@ const fadeIn = keyframes`
 	}
 	100% {
 		opacity: 1;
-		height: 14px;
+		height: 20px;
 	}
 `;
 

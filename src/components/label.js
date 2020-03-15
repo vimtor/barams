@@ -26,10 +26,10 @@ const fadeOut = keyframes`
 
 const Label = styled.label`
   animation: ${props => props.active ? fadeIn : fadeOut} 100ms ease-in-out forwards;
-  color: ${({ theme }) => theme.colors.light};
-  font-size: 10px;
+  color: ${({ theme }) => theme.colors.peanut};
+  font-size: 12px;
   height: 0;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   opacity: 0;
 `;
 

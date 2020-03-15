@@ -12,7 +12,8 @@ import './style.css';
 const theme = {
 	colors: {
 		black: '#515151',
-		gray: '#5E6368',
+		gray: '#5e6368',
+		peanut: '#c6c6c6',
 		light: '#eaeaea',
 		white: '#fff',
 		green: '#2Ecc71',
@@ -25,7 +26,7 @@ const theme = {
 
 const StyledApp = styled.main`
   height: auto;
-  width: 300px;
+  width: 350px;
 `;
 
 const App = () => (

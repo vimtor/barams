@@ -9,38 +9,22 @@ import useTab from '../hooks/use-tab';
 const ButtonGrid = styled.div`
 	display: ${props => props.display ? 'grid' : 'none'};
 	gap: 8px;
+	margin: -10px;
 	max-height: 200px;
 	overflow-y: scroll;
+	padding: 10px;
 
 	&::-webkit-scrollbar {
 		display: none;
 	}
 `;
 
-const updateParameters = (url, params) => {
-	const args = params.map(({ name, value }) => `${name}=${value}`).join('&');
-
-	if (url.includes('?')) {
-		if (url.endsWith('?')) {
-			return url + args;
-		}
-
-		return `${url  }&${  args}`;
-	}
-
-	return `${url  }?${  args}`;
-};
 
 const Home = () => {
 	const { groups } = useGroups();
-	const tab = useTab();
+	const { setUrl } = useTab();
 
-	const handleClick = params => () => {
-		const url = tab.get();
-
-		tab.set(updateParameters(url, params));
-		tab.reload();
-	};
+	const handleClick = params => () => setUrl(params);
 
 	return (
 		<Content>

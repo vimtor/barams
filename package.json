@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel src/index.html",
+    "dev": "parcel watch src/index.html -d dist --public-url .",
     "build": "parcel build src/index.html --public-url . --no-source-maps --detailed-report",
     "test": "run-p -r start cypress:run",
     "cypress": "run-p -r start cypress:open",

@@ -1,23 +1,30 @@
-export default () => {
-	const get = () => {
-		let url = window.location.href;
+const updateParameters = (url, params) => {
+	const args = params.map(({ name, value }) => `${name}=${value}`).join('&');
 
-		if (process.env.NODE_ENV === 'production') {
-			chrome.tabs.query({ active: true, lastFocusedWindow: true }, (tabs) => {
-				url = tabs[0].url;
-			});
+	if (url.includes('?')) {
+		if (url.endsWith('?')) {
+			return url + args;
 		}
 
-		return url;
+		return `${url}&${args}`;
+	}
+
+	return `${url}?${args}`;
+};
+
+export default () => {
+	const setUrl = params => {
+		if (process.env.NODE_ENV === 'production') {
+			chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+				const { url, id } = tabs[0];
+				chrome.tabs.update(id, { url: updateParameters(url, params) });
+			});
+		}
+		else {
+			window.location.href = updateParameters(window.location.href, params);
+			window.location.reload();
+		}
 	};
   
-	const set = url => {
-		window.location.href = url;
-	};
-  
-	const reload = () => {
-		window.location.reload();
-	};
-  
-	return { get, set, reload };
+	return { setUrl };
 };

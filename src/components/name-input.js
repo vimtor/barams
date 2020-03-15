@@ -15,7 +15,7 @@ const Input = styled.input`
   background: transparent;
   border: 0;
   color: ${({ theme }) => theme.colors.gray};
-  font-size: 20px;
+  font-size: 24px;
   text-overflow: ellipsis;
   width: 100%;
 
@@ -51,6 +51,7 @@ const NameInput = ({ placeholder, onChange }) => {
 				onBlur={handleBlur}
 				onChange={handleChange}
 				data-test="name-input"
+				autoComplete="off"
 			/>
 		</InputButton>
 	);

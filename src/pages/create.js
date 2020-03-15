@@ -30,7 +30,7 @@ const Create = () => {
 	return (
 		<Content>
 			<NameInput
-				placeholder="Enter your name"
+				placeholder="Template name"
 				onChange={setName}
 			/>
 			<ParamsInput

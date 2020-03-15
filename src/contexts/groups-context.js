@@ -6,7 +6,7 @@ const GroupsContext = createContext();
 
 function groupsReducer(state, action) {
 	switch (action.type) {
-		case 'ADD': {
+		case 'CREATE': {
 			const groups = [
 				...state,
 				{
@@ -24,7 +24,7 @@ function groupsReducer(state, action) {
 
 			return groups;
 		}
-		case 'SET': {
+		case 'OVERRIDE': {
 			return action.payload;
 		}
 		case 'DELETE': {
@@ -52,7 +52,7 @@ const GroupsProvider = ({ children }) => {
 		if (process.env.NODE_ENV === 'production') {
 			chrome.storage.sync.get(['groups'], payload => {
 				if (payload.groups) {
-					dispatch({ type: 'SET', payload: payload.groups });
+					dispatch({ type: 'OVERRIDE', payload: payload.groups });
 				}
 			});
 		}
@@ -60,7 +60,7 @@ const GroupsProvider = ({ children }) => {
 			const payload = JSON.parse(localStorage.getItem('groups'));
 
 			if (payload) {
-				dispatch({ type: 'SET', payload });
+				dispatch({ type: 'OVERRIDE', payload });
 			}
 		}
 	}, [dispatch]);

@@ -21,7 +21,7 @@ const Create = () => {
 	const { dispatch } = useGroups();
 
 	const handleSubmit = useCallback(() => {
-		dispatch({ type: 'ADD', payload: { name, params } });
+		dispatch({ type: 'CREATE', payload: { name, params } });
 		route('/', true);
 	}, [name, params, dispatch]);
 

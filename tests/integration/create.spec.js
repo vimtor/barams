@@ -1,6 +1,18 @@
 /// <reference types="Cypress" />
 
 describe('create group', () => {
+	beforeEach(() => {
+		cy.restoreLocalStorageCache();
+	});
+
+	afterEach(() => {
+		cy.saveLocalStorageCache();
+	});
+
+	before(() => {
+		cy.clearLocalStorage();
+	});
+
 	it('loads the page', () => {
 		cy.visit('/');
 	});
@@ -48,5 +60,9 @@ describe('create group', () => {
 	it('populates the url with the supplied parameters', () => cy.fixture('group').then(({ name, url }) => {
 		cy.contains(name).click();
 		cy.url().should('include', url);
+	}));
+
+	it('does not erase created groups when reloading', () => cy.fixture('group').then(({ name }) => {
+		cy.contains(name);
 	}));
 });

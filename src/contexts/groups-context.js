@@ -1,15 +1,27 @@
 import { h, createContext } from 'preact';
-import { useContext, useReducer } from 'preact/hooks';
+import { useContext, useEffect, useReducer } from 'preact/hooks';
 
 const GroupsContext = createContext();
 
 function groupsReducer(state, action) {
 	switch (action.type) {
 		case 'ADD': {
-			return [
+			const groups = [
 				...state,
 				action.payload,
 			];
+
+			if (process.env.NODE_ENV === 'production') {
+				chrome.storage.sync.set({ groups });
+			}
+			else {
+				localStorage.setItem('groups', JSON.stringify(groups));
+			}
+
+			return groups;
+		}
+		case 'SET': {
+			return action.payload;
 		}
 		default: {
 			throw new Error(`Unhandled action type: ${action.type}`);
@@ -19,6 +31,23 @@ function groupsReducer(state, action) {
 
 const GroupsProvider = ({ children }) => {
 	const [groups, dispatch] = useReducer(groupsReducer, []);
+
+	useEffect(() => {
+		if (process.env.NODE_ENV === 'production') {
+			chrome.storage.sync.get(['groups'], payload => {
+				if (payload.groups) {
+					dispatch({ type: 'SET', payload: payload.groups });
+				}
+			});
+		}
+		else {
+			const payload = JSON.parse(localStorage.getItem('groups'));
+
+			if (payload) {
+				dispatch({ type: 'SET', payload });
+			}
+		}
+	}, [dispatch]);
 
 	return (
 		<GroupsContext.Provider value={{ groups, dispatch }}>

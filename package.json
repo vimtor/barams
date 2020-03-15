@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel src/index.html",
-    "dev": "parcel watch src/index.html -d dist --public-url .",
-    "build": "parcel build src/index.html --public-url . --no-source-maps --detailed-report",
+    "dev": "cross-env NODE_ENV=production parcel watch src/index.html -d dist --public-url .",
+    "build": "parcel build src/index.html --public-url . --detailed-report",
     "test": "run-p -r start cypress:run",
     "cypress": "run-p -r start cypress:open",
     "cypress:run": "cypress run",
@@ -16,6 +16,7 @@
     "lint:fix": "eslint . --fix"
   },
   "devDependencies": {
+    "cross-env": "^7.0.2",
     "cypress": "^4.1.0",
     "eslint": "^6.8.0",
     "eslint-config-synacor": "^3.0.5",

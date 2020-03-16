@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import { useCallback } from 'preact/hooks';
 import styled, { useTheme } from 'styled-components';
-import Box from './box';
+import Box from '../box';
 
 const StyledIconButton = styled(Box)`
 	align-items: center;

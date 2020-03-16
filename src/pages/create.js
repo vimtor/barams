@@ -4,8 +4,7 @@ import styled from 'styled-components';
 import { route } from 'preact-router';
 import Content from '../components/content';
 import NameInput from '../components/name-input';
-import ConfirmButton from '../components/confirm-button';
-import CancelButton from '../components/cancel-button';
+import { ConfirmButton, CancelButton } from '../components/icon-button';
 import { useGroups } from '../contexts/groups-context';
 import ParamsInput from '../components/params-input';
 

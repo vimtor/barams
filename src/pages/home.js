@@ -1,11 +1,11 @@
 import { h } from 'preact';
 import styled from 'styled-components';
 import Content from '../components/content';
-import Button from '../components/button';
-import AddButton from '../components/add-button';
+import Group from '../components/group';
+import { AddButton } from '../components/icon-button';
 import { useGroups } from '../contexts/groups-context';
 
-const ButtonGrid = styled.div`
+const GroupGrid = styled.div`
 	display: grid;
 	gap: 8px;
 	margin: -10px;
@@ -24,11 +24,11 @@ const Home = () => {
 
 	return (
 		<Content>
-			<ButtonGrid empty={groups.length === 0} data-test="group-grid">
-				{groups.map(group => (
-					<Button key={group.id} {...group}  />
+			<GroupGrid empty={groups.length === 0} data-test="group-grid">
+				{groups.map(props => (
+					<Group key={props.id} {...props}  />
 				))}
-			</ButtonGrid>
+			</GroupGrid>
 			<AddButton to="/create" data-test="create-button" />
 		</Content>
 	);

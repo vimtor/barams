@@ -3,7 +3,7 @@ import { useCallback, useState } from 'preact/hooks';
 import styled, { useTheme, keyframes } from 'styled-components';
 import { Close } from 'styled-icons/material';
 import Box from './box';
-import useTab from '../hooks/use-tab';
+import setParams from '../utils/set-params';
 import { useGroups } from '../contexts/groups-context';
 
 const RemoveButton = styled.button`
@@ -52,7 +52,7 @@ const fadeOut = keyframes`
   }
 `;
 
-const StyledButton = styled(Box)`
+const StyledGroup = styled(Box)`
   align-items: center;
   animation: ${props => props.removed ? fadeOut : null} 150ms ease-in-out forwards;
   background-color: ${({ theme }) => theme.colors.white};
@@ -73,15 +73,12 @@ const StyledButton = styled(Box)`
   }
 `;
 
-const Button = ({ id, params, name }) => {
+const Group = ({ id, params, name }) => {
 	const theme = useTheme();
 	const { dispatch } = useGroups();
-	const { setUrl } = useTab();
 	const [removed, setRemoved] = useState(false);
 
-	const handleClick = useCallback(() => {
-		setUrl(params);
-	}, [params]);
+	const handleClick = useCallback(() => setParams(params), [params]);
   
 	const handleRemove = useCallback(e => {
 		e.stopPropagation();
@@ -90,7 +87,7 @@ const Button = ({ id, params, name }) => {
 	}, [dispatch, id, removed, setRemoved]);
 
 	return (
-		<StyledButton onClick={handleClick} removed={removed}>
+		<StyledGroup onClick={handleClick} removed={removed}>
 			{name}
 			<RemoveButton
 				onClick={handleRemove}
@@ -98,8 +95,8 @@ const Button = ({ id, params, name }) => {
 			>
 				<Close size={24} color={theme.colors.light} />
 			</RemoveButton>
-		</StyledButton>
+		</StyledGroup>
 	);
 };
 
-export default Button;
+export default Group;

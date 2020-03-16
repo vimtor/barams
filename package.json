@@ -35,8 +35,8 @@
     "preact-compat": "^3.19.0",
     "preact-render-to-string": "^5.1.4",
     "preact-router": "^3.2.1",
-    "react-icons": "^3.9.0",
     "styled-components": "^5.0.1",
+    "styled-icons": "^10.2.1",
     "uuid": "^7.0.2"
   },
   "alias": {

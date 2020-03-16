@@ -1,8 +1,8 @@
 import { h } from 'preact';
 import { createIconButton } from './icon-button';
-import { MdAdd } from 'react-icons/md';
+import { Add } from 'styled-icons/material';
 
-const AddButton = createIconButton(MdAdd, 'green');
+const AddButton = createIconButton(Add, 'green');
 
 export default AddButton;
 

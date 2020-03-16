@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import { useCallback, useState } from 'preact/hooks';
 import styled, { useTheme, keyframes } from 'styled-components';
-import { MdClose } from 'react-icons/md';
+import { Close } from 'styled-icons/material';
 import Box from './box';
 import useTab from '../hooks/use-tab';
 import { useGroups } from '../contexts/groups-context';
@@ -96,7 +96,7 @@ const Button = ({ id, params, name }) => {
 				onClick={handleRemove}
 				data-test="delete-group-button"
 			>
-				<MdClose size={24} color={theme.colors.light} />
+				<Close size={24} color={theme.colors.light} />
 			</RemoveButton>
 		</StyledButton>
 	);

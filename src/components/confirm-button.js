@@ -1,8 +1,8 @@
 import { h } from 'preact';
 import { createIconButton } from './icon-button';
-import { MdCheck } from 'react-icons/md';
+import { Check } from 'styled-icons/material';
 
-const ConfirmButton = createIconButton(MdCheck, 'green');
+const ConfirmButton = createIconButton(Check, 'green');
 
 export default ConfirmButton;
 

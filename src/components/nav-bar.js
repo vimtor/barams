@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import styled, { useTheme } from 'styled-components';
-import { IoLogoGithub } from 'react-icons/io';
-import { MdSettings } from 'react-icons/md';
+import { Github } from 'styled-icons/boxicons-logos';
+import { Settings } from 'styled-icons/material';
 
 const NavWrapper = styled.nav`
   align-items: center;
@@ -43,8 +43,8 @@ const NavBar = () => (
       barams
 		</NavTitle>
 		<NavLinks>
-			<NavLink icon={IoLogoGithub} to="https://github.com/papeloto/barams" />
-			<NavLink icon={MdSettings} />
+			<NavLink icon={Github} to="https://github.com/papeloto/barams" />
+			<NavLink icon={Settings} />
 		</NavLinks>
 	</NavWrapper>
 );

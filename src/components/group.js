@@ -56,11 +56,9 @@ const StyledGroup = styled(Box)`
   align-items: center;
   animation: ${props => props.removed ? fadeOut : null} 150ms ease-in-out forwards;
   background-color: ${({ theme }) => theme.colors.white};
-  color: ${({ theme }) => theme.colors.gray};
   display: flex;
-  font-family: ${({ theme }) => theme.fonts.primary};
-  font-size: 24px;
   justify-content: space-between;
+  max-width: 302px;
   transition: all 150ms ease-in-out;
 
   &:hover {
@@ -71,6 +69,15 @@ const StyledGroup = styled(Box)`
   &:hover ${RemoveButton} {
     opacity: 1;
   }
+`;
+
+const GroupName = styled.p`
+  color: ${({ theme }) => theme.colors.gray};
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-size: 24px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 80%;
 `;
 
 const Group = ({ id, params, name }) => {
@@ -88,7 +95,9 @@ const Group = ({ id, params, name }) => {
 
 	return (
 		<StyledGroup onClick={handleClick} removed={removed}>
-			{name}
+			<GroupName>
+				{name}
+			</GroupName>
 			<RemoveButton
 				onClick={handleRemove}
 				data-test="delete-group-button"

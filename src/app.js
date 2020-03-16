@@ -7,8 +7,6 @@ import Home from './pages/home';
 import Create from './pages/create';
 import { createHashHistory } from 'history';
 
-import './style.css';
-
 const theme = {
 	colors: {
 		black: '#515151',

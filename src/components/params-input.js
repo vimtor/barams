@@ -15,6 +15,7 @@ const Input = styled.input`
   background: transparent;
   border: 0;
   color: ${({ theme }) => theme.colors.gray};
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-size: 20px;
   text-overflow: ellipsis;
   width: 100%;

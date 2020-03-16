@@ -10,7 +10,7 @@
     "clean": "rimraf .cache/ dist/",
     "test": "run-p -r start cypress:run",
     "build": "run-s clean parcel:build",
-    "parcel:build": "parcel build src/index.html --public-url . --detailed-report",
+    "parcel:build": "parcel build src/index.html --no-source-maps --experimental-scope-hoisting --public-url . --detailed-report",
     "cypress": "run-p -r start cypress:open",
     "cypress:run": "cypress run",
     "cypress:open": "cypress open",

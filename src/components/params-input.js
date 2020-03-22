@@ -5,8 +5,8 @@ import Box from './box';
 import Label from './label';
 
 const ParamsBox = styled(Box)`
-  background: ${({ theme }) => theme.colors.white};
-  display: flex;
+	background: ${({ theme }) => theme.colors.white};
+	display: flex;
   flex-direction: column;
   font-family: ${({ theme }) => theme.fonts.primary};
 `;
@@ -91,7 +91,7 @@ const ParamsInput = ({ placeholder, onChange }) => {
   
 
 	return (
-		<ParamsBox>
+		<ParamsBox tabIndex={-1}>
 			<Label active>{placeholder}</Label>
 			<ParamsGrid>
 				{params.map((param, idx) => (

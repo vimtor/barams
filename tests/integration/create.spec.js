@@ -27,8 +27,7 @@ describe('create group', () => {
 	});
 
 	it('cannot submit with empty fields', () => {
-		cy.label('confirm-button').click();
-		cy.url().should('include', 'create');
+		cy.label('confirm-button').should('be.disabled');
 	});
 	
 	it('name can be written', () => cy.fixture('group').then(({ name }) => {
@@ -58,6 +57,7 @@ describe('create group', () => {
 	});
 
 	it('populates the url with the supplied parameters', () => cy.fixture('group').then(({ name, url }) => {
+		cy.visit('/');
 		cy.contains(name).click();
 		cy.url().should('include', url);
 	}));

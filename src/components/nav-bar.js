@@ -31,7 +31,7 @@ const NavLink = ({ icon, to }) => {
 	const Icon = icon;
 
 	return (
-		<a href={to}>
+		<a href={to} tabIndex={-1}>
 			<Icon size={16} color={theme.colors.gray} />
 		</a>
 	);

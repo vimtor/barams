@@ -17,15 +17,19 @@ const RemoveButton = styled.button`
   justify-content: center;
   margin: 0;
   opacity: 0;
+  outline: none;
   transition: opacity 0.6s ease-in-out, background-color 150ms ease-in-out;
   width: 32px;
 
-  &:hover {
+  &:hover, &:focus {
     background-color: ${({ theme }) => theme.colors.red};
+    opacity: 1;
   }
 
-  &:hover svg {
+  &:hover svg,
+  &:focus svg {
     fill: ${({ theme }) => theme.colors.white};
+    opacity: 1;
   }
 `;
 
@@ -61,12 +65,13 @@ const StyledGroup = styled(Box)`
   max-width: 302px;
   transition: all 150ms ease-in-out;
 
-  &:hover {
+  &:hover, &:focus {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04);
-    transform: translateY(-2%);
+    transform: translateY(-4%);
   }
 
-  &:hover ${RemoveButton} {
+  &:hover ${RemoveButton},
+  &:focus ${RemoveButton} {
     opacity: 1;
   }
 `;
@@ -85,8 +90,7 @@ const Group = ({ id, params, name }) => {
 	const { dispatch } = useGroups();
 	const [removed, setRemoved] = useState(false);
 
-	const handleClick = useCallback(() => setParams(params), [params]);
-  
+	const handleClick = useCallback(() => setParams(params), [params, setParams]);
 	const handleRemove = useCallback(e => {
 		e.stopPropagation();
 		setRemoved(true);
@@ -95,9 +99,7 @@ const Group = ({ id, params, name }) => {
 
 	return (
 		<StyledGroup onClick={handleClick} removed={removed}>
-			<GroupName>
-				{name}
-			</GroupName>
+			<GroupName>{name}</GroupName>
 			<RemoveButton
 				onClick={handleRemove}
 				data-test="delete-group-button"

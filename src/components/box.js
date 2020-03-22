@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import styled from 'styled-components';
 
-const Box = styled.a`
+const Box = styled.button`
   border: ${({ theme }) => `1px solid ${theme.colors.light}`};
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.03);
@@ -9,7 +9,12 @@ const Box = styled.a`
   cursor: pointer;
   display: block;
   padding: 16px 12px;
+  text-align: left;
   width: 100%;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export default Box;

@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import { useState, useCallback } from 'preact/hooks';
+import { useEffect, useState, useCallback } from 'preact/hooks';
 import styled from 'styled-components';
 import { route } from 'preact-router';
 import Content from '../components/content';
@@ -24,7 +24,19 @@ const Create = () => {
 		route('/', true);
 	}, [name, params, dispatch]);
 
-	const handleCancel = useCallback(() => route('/', true), []);
+	const handleUserKeyPress = useCallback(e => {
+		if (e.key === 'Escape') {
+			route('/', true);
+		}
+	}, []);
+
+	useEffect(() => {
+		window.addEventListener('keydown', handleUserKeyPress);
+
+		return () => {
+			window.removeEventListener('keydown', handleUserKeyPress);
+		};
+	}, [handleUserKeyPress]);
 
 	return (
 		<Content>
@@ -38,14 +50,11 @@ const Create = () => {
 			/>
 			<Form>
 				<ConfirmButton
-					disabled={!name}
+					disabled={!name || !params}
 					onClick={handleSubmit}
 					data-test="confirm-button"
 				/>
-				<CancelButton
-					onClick={handleCancel}
-					data-test="cancel-button"
-				/>
+				<CancelButton data-test="cancel-button" to="/" />
 			</Form>
 		</Content>
 	);

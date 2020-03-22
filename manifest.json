@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "barams",
-  "description": "Create URL parameter templates",
-  "version": "0.1.0",
+  "description": "Create query string parameter templates to update your current url.",
+  "version": "0.2.0",
   "author": "Victor Navarro <papeloto>",
   "icons": {
     "16": "assets/icon16.png",

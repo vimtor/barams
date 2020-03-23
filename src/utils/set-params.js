@@ -1,12 +1,16 @@
-const updateParameters = (url, params) => {
+export const updateParameters = (url, params, append = true) => {
 	const args = params.map(({ name, value }) => `${name}=${value}`).join('&');
 
 	if (url.includes('?')) {
-		if (url.endsWith('?')) {
-			return url + args;
-		}
+		if (append) {
+			if (url.endsWith('?')) {
+				return url + args;
+			}
 
-		return `${url}&${args}`;
+			return `${url}&${args}`;
+		}
+		
+		return `${url.substring(0, url.lastIndexOf('?'))}?${args}`;
 	}
 
 	return `${url}?${args}`;
